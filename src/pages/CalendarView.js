@@ -35,8 +35,7 @@ const CalendarView = ({
   }
 
   return (
-    <div
-      className="calendar-grid"   {/* 🔥 THIS IS THE KEY FIX */}
+    <div className="calendar-grid"   
       style={{
         position: 'relative',
         display: 'grid',
