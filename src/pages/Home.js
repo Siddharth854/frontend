@@ -410,12 +410,18 @@ const Home = () => {
 
           {/* CALENDAR */}
           <div className="card calendar-card">
-            <h3>Weekly Schedule</h3>
-            <CalendarView
-              bookings={bookings}
-              onBookingClick={setSelectedBooking}
-            />
-          </div>
+  <h3>Weekly Schedule</h3>
+
+        <div className="calendar-wrapper">
+          <CalendarView
+            bookings={bookings}
+            onBookingClick={setSelectedBooking}
+            onCellSelect={() => {}}
+            loggedInUserId={loggedInUserId}
+            onDeleteBooking={handleDeleteBooking}
+          />
+        </div>
+      </div>
         </div>
       </main>
 
