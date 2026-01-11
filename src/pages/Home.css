@@ -83,6 +83,10 @@ body {
   z-index: 1000;
 }
 
+.calendar-card {
+  overflow-x: auto;
+}
+
 .nav-title,
 .nav-center,
 .nav-right {
