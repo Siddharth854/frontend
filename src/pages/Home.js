@@ -267,8 +267,11 @@ import { useNavigate } from 'react-router-dom'
 import { handleSuccess } from '../utils'
 import CalendarView from './CalendarView'
 import './Home.css'
+const API_BASE_URL = "https://conference-web-app.onrender.com";
 
-const API_URL = 'http://localhost:8080/api/bookings'
+const API_URL = `${API_BASE_URL}/api/bookings`
+
+//const API_URL = 'http://localhost:8080/api/bookings'
 
 const Home = () => {
   const navigate = useNavigate()

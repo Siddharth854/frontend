@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
+const API_BASE_URL = "https://conference-web-app.onrender.com";
 
 // 🔥 SIMPLE JWT DECODER (NO LIB NEEDED)
 const decodeJWT = (token) => {
@@ -36,7 +37,7 @@ function Login() {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginInfo)
