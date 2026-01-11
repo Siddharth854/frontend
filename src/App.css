@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
-
+/* body {
+  background-image: url("https://mujslcm.jaipur.manipal.edu/keen/themes/keen/theme/demo1/dist/assets/media/misc/bg_1.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;      
+  background-position: center; 
+  background-attachment: fixed; 
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,6 +21,7 @@
 
 .App-header {
   background-color: #282c34;
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -1,0 +1,20 @@
+top-title {
+  position: fixed;          /* stays at top even on scroll */
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 1000;
+
+  /* Optional glass effect */
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
