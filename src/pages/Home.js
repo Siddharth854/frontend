@@ -196,17 +196,14 @@
 
 // export default Home
 
-
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { handleSuccess } from '../utils'
 import CalendarView from './CalendarView'
 import './Home.css'
-const API_BASE_URL = "https://conference-web-app.onrender.com";
 
+const API_BASE_URL = "https://conference-web-app.onrender.com"
 const API_URL = `${API_BASE_URL}/api/bookings`
-
-//const API_URL = 'http://localhost:8080/api/bookings'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -231,7 +228,6 @@ const Home = () => {
      LOAD USER + BOOKINGS
   ======================= */
   useEffect(() => {
-    // ✅ FIX: correct key for username
     setLoggedInUser(localStorage.getItem('loggedInUser'))
     fetchBookings()
   }, [])
@@ -254,7 +250,6 @@ const Home = () => {
       } else if (Array.isArray(data.bookings)) {
         setBookings(data.bookings)
       } else {
-        console.error('Unexpected bookings response:', data)
         setBookings([])
       }
     } catch (err) {
@@ -364,34 +359,32 @@ const Home = () => {
   }
 
   /* =======================
-     OWNER CHECK (SAFE)
+     OWNER CHECK
   ======================= */
   const isOwner = (booking) => {
     if (!booking || !loggedInUserId) return false
-
     const ownerId =
       typeof booking.userId === 'object'
         ? booking.userId._id
         : booking.userId
-
     return String(ownerId) === String(loggedInUserId)
   }
 
   return (
     <>
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
       <div className="navbar">
         <div className="nav-title">Conference Room Booking System</div>
         <div className="nav-center">DEPARTMENT OF COMPUTER APPLICATION</div>
         <div className="nav-right">
-          <span className="nav-user">Welcome :    {loggedInUser}</span>
+          <span className="nav-user">Welcome : {loggedInUser}</span>
           <button className="logout-btn" onClick={handleLogout}>
             Logout
           </button>
         </div>
       </div>
 
-      {/* PAGE CONTENT */}
+      {/* ================= PAGE CONTENT (🔥 IMPORTANT) ================= */}
       <main className="page-content">
         <div className="dashboard">
 
@@ -400,14 +393,29 @@ const Home = () => {
             <h3>Book Conference Room (101)</h3>
 
             <form onSubmit={handleSubmit} className="booking-form">
-              <input name="professor" placeholder="Professor Name"
-                value={formData.professor} onChange={handleChange} required />
+              <input
+                name="professor"
+                placeholder="Professor Name"
+                value={formData.professor}
+                onChange={handleChange}
+                required
+              />
 
-              <input name="department" placeholder="Department"
-                value={formData.department} onChange={handleChange} required />
+              <input
+                name="department"
+                placeholder="Department"
+                value={formData.department}
+                onChange={handleChange}
+                required
+              />
 
-              <input name="school" placeholder="School"
-                value={formData.school} onChange={handleChange} required />
+              <input
+                name="school"
+                placeholder="School"
+                value={formData.school}
+                onChange={handleChange}
+                required
+              />
 
               <input value="Room 101" disabled />
 
@@ -461,11 +469,10 @@ const Home = () => {
               onCellSelect={handleCellSelect}
             />
           </div>
-
         </div>
       </main>
 
-      {/* BOOKING DETAILS MODAL */}
+      {/* ================= MODAL ================= */}
       {selectedBooking && (
         <div className="modal-overlay">
           <div className="modal">
@@ -478,19 +485,10 @@ const Home = () => {
             <p><b>Day:</b> {selectedBooking.day}</p>
             <p><b>Time:</b> {selectedBooking.startTime} – {selectedBooking.endTime}</p>
 
-            {/* DELETE BUTTON — OWNER ONLY */}
             {isOwner(selectedBooking) && (
               <button
+                className="delete-btn"
                 onClick={() => handleDeleteBooking(selectedBooking._id)}
-                style={{
-                  background: '#e63946',
-                  color: 'white',
-                  marginRight: '12px',
-                  padding: '8px 14px',
-                  borderRadius: '6px',
-                  border: 'none',
-                  cursor: 'pointer'
-                }}
               >
                 Delete Booking
               </button>
