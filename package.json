@@ -16,10 +16,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npx react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "chmod -R +x node_modules/.bin"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
