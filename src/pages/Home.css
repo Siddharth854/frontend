@@ -19,6 +19,7 @@ body {
   grid-template-columns: 420px 1fr;
   gap: 24px;
   padding: 110px 20px 20px;
+  padding-top: 110px;
 }
 
 @media (max-width: 1024px) {
@@ -155,4 +156,11 @@ body {
   border-radius: 6px;
   margin-right: 10px;
   cursor: pointer;
+}
+:root {
+  --navbar-height: 110px;
+}
+
+.page-content {
+  padding-top: var(--navbar-height);
 }
