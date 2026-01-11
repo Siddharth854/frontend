@@ -50,20 +50,21 @@ body {
 }
 
 /* =====================
-   CALENDAR
+   CALENDAR FIX
 ===================== */
-.calendar-card {
+.calendar-wrapper {
+  position: relative;        /* 🔥 REQUIRED */
+  min-height: 720px;         /* 🔥 MATCHES TIME SLOTS */
   width: 100%;
-  min-height: 500px;          /* 🔥 IMPORTANT */
-  overflow-x: auto;
-  position: relative;         /* 🔥 REQUIRED for absolute children */
 }
 
 @media (max-width: 768px) {
-  .calendar-card {
-    min-height: 600px;
+  .calendar-wrapper {
+    min-height: 900px;
+    overflow-x: auto;
   }
 }
+
 
 /* =====================
    NAVBAR
