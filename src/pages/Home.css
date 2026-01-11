@@ -54,7 +54,15 @@ body {
 ===================== */
 .calendar-card {
   width: 100%;
+  min-height: 500px;          /* 🔥 IMPORTANT */
   overflow-x: auto;
+  position: relative;         /* 🔥 REQUIRED for absolute children */
+}
+
+@media (max-width: 768px) {
+  .calendar-card {
+    min-height: 600px;
+  }
 }
 
 /* =====================
