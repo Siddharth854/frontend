@@ -98,7 +98,7 @@ body {
 /* Mobile navbar is taller */
 @media (max-width: 768px) {
   .page-content {
-    padding-top: 240px; /* 🔥 THIS FIXES HIDDEN INPUTS */
+    padding-top: 340px; /* 🔥 THIS FIXES HIDDEN INPUTS */
   }
 }
 
@@ -125,6 +125,7 @@ body {
 ===================== */
 .booking-card {
   width: 100%;
+  padding-top: 80px;
 }
 
 .booking-form {
