@@ -17,7 +17,11 @@ body {
 .page-content {
   padding-top: 110px; /* pushes content below fixed navbar */
 }
-
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 190px; /* 🔥 fixes hidden inputs under navbar */
+  }
+}
 /* =====================
    DASHBOARD LAYOUT
 ===================== */
