@@ -4,30 +4,35 @@
   grid-auto-rows: 60px;
   border: 1px solid #ccc;
 
-  position: relative;     /* ✅ REQUIRED */
-  overflow: visible;      /* ✅ REQUIRED */
+  position: relative;        /* REQUIRED for absolute bookings */
+  min-height: 720px;         /* 🔥 CRITICAL FIX */
+  width: 100%;
 
-  padding-top: 85px;
+  overflow: visible;
 }
 
+/* Day header row */
 .day-header {
   text-align: center;
   font-weight: bold;
-  background: #f3f3f3;
+  background: #6a5acd;
+  color: white;
   border-bottom: 1px solid #ccc;
-  margin-top: 35px;
 }
 
+/* Time labels */
 .time-label {
   font-size: 12px;
-  padding: 5px;
+  padding: 6px;
   border-right: 1px solid #ccc;
 }
 
+/* Empty grid cells */
 .cell {
   border: 1px solid #eee;
 }
 
+/* Booking blocks */
 .booking {
   background-color: #1b63e9;
   color: white;
