@@ -148,6 +148,7 @@ body {
 ===================== */
 .calendar-card {
   overflow-x: auto;
+  margin-top: 80px;
 }
 
 .calendar-wrapper {
