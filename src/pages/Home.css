@@ -98,7 +98,7 @@ body {
 /* Mobile navbar is taller */
 @media (max-width: 768px) {
   .page-content {
-    padding-top: 340px; /* 🔥 THIS FIXES HIDDEN INPUTS */
+    padding-top: 240px; /* 🔥 THIS FIXES HIDDEN INPUTS */
   }
 }
 
