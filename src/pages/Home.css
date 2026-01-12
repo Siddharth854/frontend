@@ -10,83 +10,6 @@ body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 }
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-
-/* Desktop */
-@media (min-width: 769px) {
-  .navbar {
-    position: fixed;   /* fixed only on desktop */
-  }
-
-  .nav-title {
-    flex: 1;
-    text-align: left;
-  }
-
-  .nav-center {
-    flex: 1;
-    text-align: center;
-  }
-
-  .nav-right {
-    flex: 1;
-    text-align: right;
-  }
-}
-
-.nav-user {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.logout-btn {
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background: purple;
-  color: white;
-}
-
-/* Desktop navbar */
-@media (min-width: 769px) {
-  .navbar {
-    flex-direction: row;
-    height: 80px;
-  }
-
-  .nav-title {
-    flex: 1;
-    text-align: left;
-  }
-
-  .nav-center {
-    flex: 1;
-  }
-
-  .nav-right {
-    flex: 1;
-    justify-content: flex-end;
-  }
-}
-
-/* =====================
-   PAGE CONTENT FIX
-===================== */
-.page-content {
-  padding-top: 16px;
-}
-@media (max-width: 768px) {
-  .page-content {
-    padding-top: 16px;  /* 🔥 NO HUGE PADDING */
-  }
-}
 
 /* =====================
    DASHBOARD LAYOUT
@@ -95,9 +18,7 @@ body {
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 24px;
-  padding: 20px;
-  position: relative;
-  z-index: 1;
+  padding: 110px 20px 20px;
 }
 
 @media (max-width: 1024px) {
@@ -111,7 +32,6 @@ body {
 ===================== */
 .booking-card {
   width: 100%;
-  padding-top: 80px;
 }
 
 .booking-form {
@@ -133,18 +53,63 @@ body {
    CALENDAR
 ===================== */
 .calendar-card {
-  overflow-x: auto;
-  margin-top: 80px;
-}
-.calendar-wrapper {
-  min-height: 720px;
   width: 100%;
+  overflow-x: auto;
 }
 
-@media (max-width: 768px) {
-  .calendar-wrapper {
-    min-height: 900px;
-    overflow-x: auto;
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1d3557;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 1000;
+}
+
+.nav-title,
+.nav-center,
+.nav-right {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.nav-user {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;
+  }
+
+  .nav-title,
+  .nav-center {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .nav-right {
+    width: auto;
+    margin-left: auto;
+    text-align: right;
   }
 }
 
@@ -177,34 +142,4 @@ body {
   border-radius: 6px;
   margin-right: 10px;
   cursor: pointer;
-}
-
-/* 🔥 MOBILE MENU BUTTON */
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* MOBILE NAVBAR TOGGLE */
-@media (max-width: 768px) {
-  .menu-btn {
-    display: block;
-  }
-
-  .navbar:not(.open) .nav-center,
-  .navbar:not(.open) .nav-right {
-    display: none;
-  }
-
-  .page-content {
-    padding-top: 90px; /* navbar collapsed */
-  }
-
-  .navbar.open + .page-content {
-    padding-top: 220px; /* navbar expanded */
-  }
 }
