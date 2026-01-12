@@ -32,6 +32,7 @@ body {
 ===================== */
 .booking-card {
   width: 100%;
+  padding-top: 50px;
 }
 
 .booking-form {
