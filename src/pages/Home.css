@@ -10,19 +10,12 @@ body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 }
-
-/.navbar {
-  position: sticky;     /* 🔥 KEY FIX */
+.navbar {
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: #1d3557;
-  color: white;
   z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
 }
+
 
 /* Desktop */
 @media (min-width: 769px) {
@@ -87,9 +80,8 @@ body {
    PAGE CONTENT FIX
 ===================== */
 .page-content {
-  padding-top: 100px;   /* desktop fixed navbar */
+  padding-top: 16px;
 }
-
 @media (max-width: 768px) {
   .page-content {
     padding-top: 16px;  /* 🔥 NO HUGE PADDING */
@@ -144,9 +136,7 @@ body {
   overflow-x: auto;
   margin-top: 80px;
 }
-
 .calendar-wrapper {
-  position: relative;
   min-height: 720px;
   width: 100%;
 }
