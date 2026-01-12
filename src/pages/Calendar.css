@@ -1,71 +1,64 @@
-/* .calendar-grid {
-  display: grid;
-  grid-template-columns: 80px repeat(7, 1fr);
-  grid-auto-rows: 60px;
-  border: 1px solid #ccc;
-
-  position: relative;        
-  min-height: 720px;        
+/* =========================
+   CALENDAR WRAPPER (NEW)
+   🔥 VERY IMPORTANT
+========================= */
+.calendar-wrapper {
+  position: relative;
   width: 100%;
-
-  overflow: visible;
+  overflow-x: auto;          /* allows horizontal scroll on mobile */
+  padding-bottom: 10px;
 }
 
-.day-header {
-  text-align: center;
-  font-weight: bold;
-  background: #6a5acd;
-  color: white;
-  border-bottom: 1px solid #ccc;
-}
-
-.time-label {
-  font-size: 12px;
-  padding: 6px;
-  border-right: 1px solid #ccc;
-}
-
-.cell {
-  border: 1px solid #eee;
-}
-
-.booking {
-  background-color: #1b63e9;
-  color: white;
-  padding: 6px;
-  border-radius: 6px;
-  font-size: 12px;
-  z-index: 2;
-} */
-
-
+/* =========================
+   CALENDAR GRID
+========================= */
 .calendar-grid {
   display: grid;
   grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
   grid-auto-rows: 60px;
-  position: relative;
-  min-height: 720px;   /* 🔥 REQUIRED */
-  width: 100%;
+
+  position: relative;        /* REQUIRED for absolute bookings */
+  min-height: 720px;         /* REQUIRED so grid is visible */
+  width: max-content;        /* 🔥 prevents collapsing */
+  min-width: 100%;
+
+  border: 1px solid #ccc;
+  background: white;
 }
 
+/* =========================
+   DAY HEADER
+========================= */
 .day-header {
   text-align: center;
   font-weight: bold;
   background: #6a5acd;
   color: white;
   padding: 6px;
+  border-bottom: 1px solid #ccc;
 }
 
+/* =========================
+   TIME LABEL
+========================= */
 .time-label {
   font-size: 12px;
-  padding: 5px;
+  padding: 6px;
   border-right: 1px solid #ccc;
+  background: #fafafa;
 }
 
+/* =========================
+   GRID CELL
+========================= */
 .cell {
   border: 1px solid #eee;
+  background: #fff;
 }
 
+/* =========================
+   BOOKING BLOCK
+========================= */
 .booking {
   position: absolute;
   background-color: #1b63e9;
@@ -76,4 +69,31 @@
   z-index: 50;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   DELETE BUTTON (OPTIONAL)
+========================= */
+.booking button {
+  margin-top: 6px;
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    overflow-x: auto;
+  }
+
+  .calendar-grid {
+    min-width: 900px; /* 🔥 forces grid visibility on mobile */
+  }
 }
