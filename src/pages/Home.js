@@ -228,6 +228,19 @@ const Home = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
 
   /* =======================
+   GRID CLICK / DRAG
+======================= */
+const handleCellSelect = (day, startTime, endTime) => {
+  setFormData(prev => ({
+    ...prev,
+    day,
+    startTime,
+    endTime: endTime || prev.endTime,
+    room: 'Room 101'
+  }))
+}
+  
+  /* =======================
      CREATE BOOKING
   ======================= */
   const handleSubmit = async (e) => {
