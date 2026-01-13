@@ -59,9 +59,6 @@ body {
    paddng: 150px;
 }
 
-/* =====================
-   NAVBAR
-===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -70,18 +67,35 @@ body {
   background: #1d3557;
   color: white;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 12px 16px;
   z-index: 1000;
 }
 
-.nav-title,
-.nav-center,
-.nav-right {
-  width: 100%;
+/* Center department absolutely */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;      
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+
+/* Left title */
+.nav-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Right section */
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .nav-user {
@@ -97,21 +111,10 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    flex-wrap: nowrap;
-  }
-
-  .nav-title,
+/* Mobile adjustments */
+@media (max-width: 768px) {
   .nav-center {
-    width: auto;
-    margin-bottom: 0;
-  }
-
-  .nav-right {
-    width: auto;
-    margin-left: auto;
-    text-align: right;
+    font-size: 18px;
   }
 }
 
