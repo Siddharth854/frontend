@@ -16,6 +16,7 @@ const Home = () => {
 
   // /* 🔥 Mobile navbar toggle */
   const [menuOpen, setMenuOpen] = useState(false)
+
   const loggedInUserId = localStorage.getItem('userId')
 
   const [formData, setFormData] = useState({
@@ -168,27 +169,36 @@ const Home = () => {
     <>
       {/* ================= NAVBAR ================= */}
 <div className="navbar">
-  <div className="nav-left">
+  {/* Top bar */}
+  <div className="navbar-top">
     <button
       className="menu-btn"
       onClick={() => setMenuOpen(!menuOpen)}
     >
       ☰
     </button>
-    <div className="nav-title">Conference Room Booking</div>
+
+    <div className="nav-title">
+      Conference Room Booking
+    </div>
   </div>
 
-  <div className="nav-center">
-    DEPARTMENT OF COMPUTER APPLICATION
-  </div>
+  {/* Mobile menu (hidden by default) */}
+  <div className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
+    <div className="nav-center">
+      DEPARTMENT OF COMPUTER APPLICATION
+    </div>
 
-  <div className={`nav-right ${menuOpen ? 'open' : ''}`}>
-    <span className="nav-user">Welcome {loggedInUser}</span>
+    <div className="nav-user">
+      Welcome {loggedInUser}
+    </div>
+
     <button className="logout-btn" onClick={handleLogout}>
       Logout
     </button>
   </div>
 </div>
+
 
       {/* ================= PAGE CONTENT ================= */}
       <main className="page-content">
