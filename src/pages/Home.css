@@ -57,61 +57,113 @@ body {
   padding: 15px; 
 
 /* =====================
-   MOBILE NAVBAR
+   NAVBAR
 ===================== */
 
-.nav-left {
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1d3557;
+  color: white;
+  z-index: 1000;
+}
+
+/* Top bar (always visible) */
+.navbar-top {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 12px 16px;
 }
 
-/* Hamburger button */
+/* Hamburger */
 .menu-btn {
-  font-size: 24px;
+  font-size: 26px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  display: none;
 }
 
-/* Desktop */
-@media (min-width: 769px) {
+/* Title */
+.nav-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Hidden menu */
+.navbar-menu {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Open menu */
+.navbar-menu.open {
+  display: flex;
+}
+
+/* Menu items */
+.nav-center {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nav-user {
+  font-size: 16px;
+  text-align: center;
+}
+
+.logout-btn {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =====================
+   PAGE OFFSET (CRITICAL)
+===================== */
+
+.page-content {
+  padding-top: 56px; /* height of navbar-top */
+}
+   @media (min-width: 769px) {
   .menu-btn {
     display: none;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .menu-btn {
-    display: block;
-  }
-
-  .nav-center {
-    position: static;
-    transform: none;
-    font-size: 16px;
-    margin: 6px 0;
-    text-align: center;
-    width: 100%;
   }
 
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .nav-right {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .nav-right.open {
     display: flex;
+    align-items: center;
+    padding: 12px 16px;
+  }
+
+  .navbar-top {
+    padding: 0;
+  }
+
+  .navbar-menu {
+    display: flex !important;
+    flex-direction: row;
+    margin-left: auto;
+    align-items: center;
+    gap: 16px;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
