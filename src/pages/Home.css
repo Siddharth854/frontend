@@ -54,67 +54,64 @@ body {
    CALENDAR
 ===================== */
 .calendar-card {
-  width: 100%;
-  overflow-x: auto;
-   paddng: 150px;
-}
+  padding: 15px; 
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #1d3557;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  z-index: 1000;
-}
+/* =====================
+   MOBILE NAVBAR
+===================== */
 
-/* Center department absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 22px;      
-  font-weight: 700;
-  text-align: center;
-  white-space: nowrap;
-}
-
-
-/* Left title */
-.nav-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* Right section */
-.nav-right {
-  margin-left: auto;
+.nav-left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.nav-user {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.logout-btn {
-  padding: 6px 12px;
-  border-radius: 6px;
+/* Hamburger button */
+.menu-btn {
+  font-size: 24px;
+  background: none;
   border: none;
+  color: white;
   cursor: pointer;
+  display: none;
 }
 
-/* Mobile adjustments */
+/* Desktop */
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
   .nav-center {
-    font-size: 18px;
+    position: static;
+    transform: none;
+    font-size: 16px;
+    margin: 6px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-right.open {
+    display: flex;
   }
 }
 
