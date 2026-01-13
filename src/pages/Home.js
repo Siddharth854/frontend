@@ -14,8 +14,8 @@ const Home = () => {
   const [bookings, setBookings] = useState([])
   const [selectedBooking, setSelectedBooking] = useState(null)
 
-  /* 🔥 Mobile navbar toggle */
-  const [menuOpen, setMenuOpen] = useState(false)
+  // /* 🔥 Mobile navbar toggle */
+  // const [menuOpen, setMenuOpen] = useState(false)
 
   const loggedInUserId = localStorage.getItem('userId')
 
@@ -168,16 +168,17 @@ const Home = () => {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <div className={`navbar ${menuOpen ? 'open' : ''}`}>
+      // <div className={`navbar ${menuOpen ? 'open' : ''}`}>
+    <div className="navbar">
         <div className="nav-title">Conference Room Booking System</div>
 
-        {/* 🔥 MOBILE MENU BUTTON */}
-        <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
+        // {/* 🔥 MOBILE MENU BUTTON */}
+        // <button
+        //   className="menu-btn"
+        //   onClick={() => setMenuOpen(!menuOpen)}
+        // >
+        //   ☰
+        // </button>
 
         <div className="nav-center">
           DEPARTMENT OF COMPUTER APPLICATION
